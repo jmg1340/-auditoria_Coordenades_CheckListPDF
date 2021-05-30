@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <title>provaCanvasPDF</title>
+    <!-- <script src="lib/pdfkit.js"></script>
+    <script src="lib/blob-stream.js"></script> -->
+    <script src="https://github.com/devongovett/pdfkit/releases/download/v0.10.0/pdfkit.standalone.js"></script>
+    <script src="https://github.com/devongovett/blob-stream/releases/download/v0.1.3/blob-stream.js"></script>
+    <script src="canvas2pdf.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.5/pdfobject.min.js"
+      integrity="sha512-K4UtqDEi6MR5oZo0YJieEqqsPMsrWa9rGDWMK2ygySdRQ+DtwmuBXAllehaopjKpbxrmXmeBo77vjA2ylTYhRA=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script> -->
+    <script type="text/javascript" src="clases.js"></script>
+
+    <script
+      type="text/javascript"
+      src="jsPagines/_plantillaAuditoria.js"
+    ></script>
+    <script type="text/javascript" src="jsPagines/pagina06.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+
+    <style>
+      .pdfobject-container {
+        height: 30rem;
+        border: 1rem solid rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- CAPÇALERA -->
+    <div class="jumbotronXX text-center" style="margin-bottom: 0">
+      <h1>Prova de Canvas2PDF</h1>
+      <p>Resize this responsive page to see the effect!</p>
+    </div>
+
+    <!-- MENU -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <a class="navbar-brand" href="coordenades.html">Coordenades</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsibleNavbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.npmjs.com/package/canvas2pdf"
+              >Canvas2PDF</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://pdfkit.org/">PDFKit</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://www.w3schools.com/bootstrap/bootstrap_ver.asp"
+              >W3C Bootstrap</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.w3schools.com/js/default.asp"
+              >W3C Javascript</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- CONTINGUT -->
+    <div class="container" style="margin-top: 30px">
+      <label for="etiquetaPags">Seleccionar pagina:</label>
+      <select name="etiquetaPags" id="seleccionarPags"></select>
+
+      <iframe
+        style="border: 1px solid black; text-align: center"
+        width="800"
+        height="1047"
+      ></iframe>
+    </div>
+  </body>
+</html>
