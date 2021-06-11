@@ -62,11 +62,20 @@ document.addEventListener("DOMContentLoaded", function(){
       ctx.drawImage(background, 0, 0, 595.28, 841.89);
       
       ctx.fillStyle='red';
+			ctx.doc.fontSize(8)
       // ctx.fillRect(50,50,100,100);
       // ctx.doc.polygon([0, 0], [595.28, 841.89]);
       // ctx.doc.stroke();
       
-      pintaPagina06(ctx)
+      switch (imatge){
+				case "Pagina_01.jpg": pintaPagina01(ctx); break;
+				case "Pagina_02.jpg": pintaCapsalera(ctx); break;
+				case "Pagina_03.jpg": pintaCapsalera(ctx); break;
+				case "Pagina_04.jpg": pintaCapsalera(ctx); break;
+				case "Pagina_05.jpg": pintaPagina05(ctx); break;
+				case "Pagina_06.jpg": pintaPagina06(ctx); break;
+			}
+			
 
       ctx.end()
     }

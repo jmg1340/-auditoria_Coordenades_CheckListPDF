@@ -7,10 +7,10 @@ let oAudit = {
   nomCentre: "Nom del centre",
   tecnic: "Jordi Miserachs",
 
-  sector: null,
-  domicili: null,
-  DC: null,
-  interlocutors: null,
+  sector: "Sector XX",
+  domicili: "Carrer Tal, numero qual, codi postal ciutat",
+  DC: "Nom del director del centre",
+  interlocutors: "nom director, JASP",
 
 
 
@@ -21,23 +21,23 @@ let oAudit = {
     informacioPrevia: {
 
       CA: {
-        codi: null,
-        idSiteBT: null,
-        totalUsuaris: 0,
-        Linia1: null,
-        Linia2: null,
+        codi: "ASXXXX",
+        idSiteBT: 1234567,
+        totalUsuaris: 10,
+        Linia1: "Linia dades principal",
+        Linia2: "Linia dades backup",
         CiscPrime: {
-          NumRouters: null,
-          NumSwitchs: null,
-          NumAPsWifi: null
+          NumRouters: 1,
+          NumSwitchs: 3,
+          NumAPsWifi: 2
         },
-        CuesImpressioMTF: null,
-        CuesImpressio: null
+        CuesImpressioMTF: 1,
+        CuesImpressio: 5
       },
       TareasRequeridas:{
-        RetirarMinipacsDelRack: false,
-        RevisarCascosJabra: false,
-        RetirarDelRack: false,
+        RetirarMinipacsDelRack: true,
+        RevisarCascosJabra: true,
+        RetirarDelRack: true,
         Otras: null
       }
     },
@@ -47,72 +47,90 @@ let oAudit = {
     sala: {
       existeix: null,     // propietat NO Rafa. Aportada per JMG
       centreSecundari: {
-        existeix: null,
-        idCentrePrincipal: null
+        existeix: true,
+        idCentrePrincipal: "aaa"
       },
 
       accessibilitat: {
         cerraduraPorta: {
           existeix: null,
-          observacions: null
+          observacions: "observacions cerradura Porta"
         },
-        estatPorta: null,	// oberta / tancada
+        estatPorta: "abierta",	// oberta / tancada
         zonaPasLliure: {
-          existeix: null,
-          observacions: null,
+          existeix: true,
+          observacions: "observacions zona de pas lliure",
         },
       },
 
       proveidorWAN: {
-        estatInstalacio: null,	// valor entre 1 - 5
+        estatInstalacio: "correcto",	// valor entre 1 - 5
         instalacionsObsoletes: {
-          existeix: null,
-          observacions: null
+          existeix: false,
+          observacions: "observacions instalacions obsoletes"
         },
         idLinia1: {
-          existeix: null,
-          observacions: null
+          existeix: true,
+          observacions: "observacions idLinia 1"
         },
         idLinia2: {
-          existeix: null,
-          observacions: null
+          existeix: false,
+          observacions: "observacions idLinia 2"
         },
-        estatConvertidorLinia1: null, 	// valor 1 - 5
-        estatConvertidorLinia2: null,	// valor 1 - 5
+        estatConvertidorLinia1: "deficiente", 	// valor 1 - 5
+        estatConvertidorLinia2: "mejorable",	// valor 1 - 5
       },
 
       SAI : {
-        estatSAI: null,	// valor 1 - 5
+        estatSAI: "aceptable",	// valor 1 - 5
         connexioSwitch: {
-          existeix: null,
-          connexioPortSW1Gi26: false,
+          existeix: false,
+          connexioPortSW1Gi26: true,
           connexio: {
-            SW: null,
-            port: null
+            SW: "SW2",
+            port: 23
           }
 
         },
-        instalacioSAI: null,	// opcions: enrackat; a terra dins el rack; al terra junt al rack
+        instalacioSAI: "sueloJuntoRack",	// opcions: enrackat; a terra dins el rack; al terra junt al rack
         elementsConnectatsSAI: {
-          router: false,	// true / false
-          switchs: false,
-          convertidorLinia1: false,
-          convertidorLinia2: false,
-          altres: false
+          router: true,
+          switchs: true,
+					switch1: true,
+					switch2: true,
+					switch3: true,
+          convertidorLinia1: true,
+          convertidorLinia2: true,
+					raspberry: true,
+					filMusical: true,
+					ampliFilM: true,
+          altres: true
         },
         elementsRegletaNeta: {
-          router: false,	// true / false
-          switchs: false,
-          convertidorLinia1: false,
-          convertidorLinia2: false,
-          altres: false
+          router: true,
+          switchs: true,
+					switch1: true,
+					switch2: true,
+					switch3: true,
+          convertidorLinia1: true,
+          convertidorLinia2: true,
+					raspberry: true,
+					filMusical: true,
+					ampliFilM: true,
+          altres: true
         },
         elementsRegletaBruta: {
-          router: false,	// true / false
-          switchs: false,
-          convertidorLinia1: false,
-          convertidorLinia2: false,
-          altres: false
+          router: true,
+          switchs: true,
+					switch1: true,
+					switch2: true,
+					switch3: true,
+          convertidorLinia1: true,
+          convertidorLinia2: true,
+					raspberry: true,
+					filMusical: true,
+					ampliFilM: true,
+          altres: true
         },
       },
 

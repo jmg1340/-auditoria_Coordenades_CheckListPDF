@@ -28,6 +28,9 @@
       type="text/javascript"
       src="jsPagines/_plantillaAuditoria.js"
     ></script>
+    <script type="text/javascript" src="jsPagines/pagina_Capsalera.js"></script>
+    <script type="text/javascript" src="jsPagines/pagina01.js"></script>
+    <script type="text/javascript" src="jsPagines/pagina05.js"></script>
     <script type="text/javascript" src="jsPagines/pagina06.js"></script>
     <script type="text/javascript" src="index.js"></script>
 
@@ -83,15 +86,20 @@
     </nav>
 
     <!-- CONTINGUT -->
-    <div class="container" style="margin-top: 30px">
-      <label for="etiquetaPags">Seleccionar pagina:</label>
-      <select name="etiquetaPags" id="seleccionarPags"></select>
+    <div class="d-flex justify-content-center">
+			<div class="d-flex flex-column " style="margin-top: 30px">
+				<div>
+					<label for="etiquetaPags">Seleccionar pagina:</label>
+					<select name="etiquetaPags" id="seleccionarPags"></select>
+				</div>
 
-      <iframe
-        style="border: 1px solid black; text-align: center"
-        width="800"
-        height="1047"
-      ></iframe>
-    </div>
+				<iframe
+					style="border: 1px solid black; text-align: center"
+					width="800"
+					height="1047"
+				></iframe>
+			</div>
+		</div>
+
   </body>
 </html>

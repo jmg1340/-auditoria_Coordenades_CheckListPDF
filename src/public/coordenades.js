@@ -19,14 +19,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 		canvas.addEventListener('mousemove', function (evt) {
 			var mousePos = getMousePos(canvas, evt);
-			var message = 'x: ' + mousePos.x / 2 + '  y: ' + mousePos.y / 2;
+			var message = 'x: ' + Math.round(mousePos.x / 2).toFixed(1) + '  y: ' + Math.round(mousePos.y / 2).toFixed(1);
 			writeMessage(canvas, message, mousePos.x, mousePos.y);
 			txtCoord.innerHTML = message
 		}, false);
 
 		canvas.addEventListener("click", function(evt){ 
 			var mousePos = getMousePos(canvas, evt);
-			var coord =  mousePos.x / 2 + ', ' + mousePos.y / 2;
+			var coord =  Math.round(mousePos.x / 2).toFixed(1) + ', ' + Math.round(mousePos.y / 2).toFixed(1);
 			copiarPortapapeles(coord)
 		})
 

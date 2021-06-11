@@ -1,0 +1,2 @@
+PAGINA 06.
+	centreSecundari.Existeix: true / false en string quan no tindria per què
