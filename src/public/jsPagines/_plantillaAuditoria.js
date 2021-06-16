@@ -134,36 +134,136 @@ let oAudit = {
         },
       },
 
-      aspecteSala: null,	// valor 1 - 5
+      aspecteSala: "deficiente",	// valor 1 - 5
       climatitzacio: {
-        existeix: null,
-        observacions: null
+        existeix: true,
+        observacions: "observacions climatitzacio"
       },
       ventilacio: {
-        existeix: null,
-        observacions: null
+        existeix: true,
+        observacions: "observacions ventilacio"
       },
       latiguillos: {
-        existeix: null,
-        observacions: null
+        existeix: true,
+        observacions: "observacions latiguillos"
       },
-      numRacksAdecuats: {
-        existeix: null,
-        observacions: null
-      },
+      // numRacksAdecuats: {
+      //   existeix: true,
+      //   observacions: "observacions num racks adecuat"
+      // },
       elementsBaixaInventari: {
-        existeix: null,
-        observacions: null
+        existeix: false,
+        observacions: "observacions elements baixa inventari"
       },
 
-      numRacks: null,
+      numRacks: 3,
       numRacksAdecuat: {
-        existeix: null,
-        observacions: null
+        existeix: true,
+        observacions: "observacions num racks adecuat"
       },
 
 
-      racks: []
+      racks: [
+
+        {
+          idRack: null,
+          ubicacio: "ubicacio rack 1",
+          tipusRack: "armario",
+          estatGeneral: "deficiente",
+          aspecteNeteja: "mejorable",
+          pany: {
+            existeix: true,
+            clauAlPany: false,
+            estatPany: "abierta"
+          },
+          zonaPasLliure: false,
+          cablejat: {
+            aspecte: "aceptable",
+            pPanels: {
+              numPPanelActius: 3,
+              categoriesPPanel: "cat6"
+            },
+            estatTerminacions: "muy deficiente",
+            duplicadorPorts: false,
+            cablejatObsolet: true
+          },
+          electricitat: {
+            estat: "aceptable",
+            regletaSuministramentNet: true,
+            regletaSuministramentBrut: false,
+            observacions: "obs electricitat"
+          },
+          ventilacio: true,
+          dispositiusObsolets: false,
+          observacions: "Obs rack 1"
+        },
+        {
+          idRack: null,
+          ubicacio: "sala administracio",
+          tipusRack: "cofre",
+          estatGeneral: "muy deficiente",
+          aspecteNeteja: "deficiente",
+          pany: {
+            existeix: false,
+            clauAlPany: true,
+            estatPany: "cerrada"
+          },
+          zonaPasLliure: true,
+          cablejat: {
+            aspecte: "deficiente",
+            pPanels: {
+              numPPanelActius: 5,
+              categoriesPPanel: "cat5e"
+            },
+            estatTerminacions: "mejorable",
+            duplicadorPorts: false,
+            cablejatObsolet: true
+          },
+          electricitat: {
+            estat: "correcto",
+            regletaSuministramentNet: false,
+            regletaSuministramentBrut: true,
+            observacions: "obs electricitat"
+          },
+          ventilacio: false,
+          dispositiusObsolets: true,
+          observacions: "obs rack 2"
+        },
+        {
+          idRack: null,
+          ubicacio: "ubicacio rack 3",
+          tipusRack: "cofre",
+          estatGeneral: "aceptable",
+          aspecteNeteja: "correcto",
+          pany: {
+            existeix: true,
+            clauAlPany: false,
+            estatPany: "abierta"
+          },
+          zonaPasLliure: false,
+          cablejat: {
+            aspecte: "muy deficiente",
+            pPanels: {
+              numPPanelActius: 4,
+              categoriesPPanel: "cat5e"
+            },
+            estatTerminacions: "mejorable",
+            duplicadorPorts: true,
+            cablejatObsolet: false
+          },
+          electricitat: {
+            estat: "aceptable",
+            regletaSuministramentNet: false,
+            regletaSuministramentBrut: false,
+            observacions: "obs electricitat"
+          },
+          ventilacio: true,
+          dispositiusObsolets: false,
+          observacions: "obs rack 3"
+        }
+
+
+			]
     },
 
 
