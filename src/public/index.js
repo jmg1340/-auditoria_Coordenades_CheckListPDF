@@ -75,6 +75,8 @@ document.addEventListener("DOMContentLoaded", function(){
 				case "Pagina_05.jpg": pintaPagina05(ctx); break;
 				case "Pagina_06.jpg": pintaPagina06(ctx); break;
 				case "Pagina_07.jpg": pintaPagina07(ctx); break;
+				case "Pagina_08.jpg": pintaPagina08(ctx); break;
+				case "Pagina_09.jpg": pintaPagina09(ctx); break;
 			}
 			
 

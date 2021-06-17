@@ -1,2 +1,3 @@
-PAGINA 06.
-	centreSecundari.Existeix: true / false en string quan no tindria per què
+PAGINA 09.
+Faltaria apartat de la medicio de la cobertura wifi i les seves observacions
+

@@ -55,23 +55,24 @@ function pintaPagina07 (ctx){
 	/* Tractament del array de RACKS */
 
 	let arrR = objSala.racks
-	let margeEsquerre = 0
+	let margeEsquerre = 0;
+	let distanciaObs = 0;
 	arrR.forEach(function(rack, index){
 
 		ctx.doc.text(rack.ubicacio, 234.0 + margeEsquerre, 262.0 - 8);
 		ctx.doc.text(rack.tipusRack, 246.0 + margeEsquerre, 279.0 - 8);
 
-		new Cercle(ctx.doc, 239.0 + margeEsquerre, 292.0, rack.estatGeneral == "muy deficiente").pinta()
-		new Cercle(ctx.doc, 251.0 + margeEsquerre, 292.0, rack.estatGeneral == "deficiente").pinta()
+		new Cercle(ctx.doc, 239.5 + margeEsquerre, 292.0, rack.estatGeneral == "muy deficiente").pinta()
+		new Cercle(ctx.doc, 250.5 + margeEsquerre, 292.0, rack.estatGeneral == "deficiente").pinta()
 		new Cercle(ctx.doc, 261.0 + margeEsquerre, 292.0, rack.estatGeneral == "mejorable").pinta()
 		new Cercle(ctx.doc, 272.0 + margeEsquerre, 292.0, rack.estatGeneral == "aceptable").pinta()
 		new Cercle(ctx.doc, 283.0 + margeEsquerre, 292.0, rack.estatGeneral == "correcto").pinta()
 
-		new Cercle(ctx.doc, 239.0 + margeEsquerre, 310.0, rack.aspecteNeteja == "muy deficiente").pinta()
-		new Cercle(ctx.doc, 251.0 + margeEsquerre, 310.0, rack.aspecteNeteja == "deficiente").pinta()
-		new Cercle(ctx.doc, 261.0 + margeEsquerre, 310.0, rack.aspecteNeteja == "mejorable").pinta()
-		new Cercle(ctx.doc, 272.0 + margeEsquerre, 310.0, rack.aspecteNeteja == "aceptable").pinta()
-		new Cercle(ctx.doc, 283.0 + margeEsquerre, 310.0, rack.aspecteNeteja == "correcto").pinta()
+		new Cercle(ctx.doc, 239.5 + margeEsquerre, 309.5, rack.aspecteNeteja == "muy deficiente").pinta()
+		new Cercle(ctx.doc, 251.0 + margeEsquerre, 309.5, rack.aspecteNeteja == "deficiente").pinta()
+		new Cercle(ctx.doc, 261.0 + margeEsquerre, 309.5, rack.aspecteNeteja == "mejorable").pinta()
+		new Cercle(ctx.doc, 272.0 + margeEsquerre, 309.5, rack.aspecteNeteja == "aceptable").pinta()
+		new Cercle(ctx.doc, 283.0 + margeEsquerre, 309.5, rack.aspecteNeteja == "correcto").pinta()
 
 		new Cercle(ctx.doc, 241.0 + margeEsquerre, 326.0, rack.pany.existeix).pinta()
 		new Cercle(ctx.doc, 264.0 + margeEsquerre, 326.0, !rack.pany.existeix && rack.pany.existeix != null).pinta()
@@ -87,7 +88,7 @@ function pintaPagina07 (ctx){
 
 		/* RACK -- cablejat */
 
-		new Cercle(ctx.doc, 239.0 + margeEsquerre, 411.0, rack.cablejat.aspecte == "muy deficiente").pinta()
+		new Cercle(ctx.doc, 239.5 + margeEsquerre, 411.0, rack.cablejat.aspecte == "muy deficiente").pinta()
 		new Cercle(ctx.doc, 251.0 + margeEsquerre, 411.0, rack.cablejat.aspecte == "deficiente").pinta()
 		new Cercle(ctx.doc, 261.0 + margeEsquerre, 411.0, rack.cablejat.aspecte == "mejorable").pinta()
 		new Cercle(ctx.doc, 272.0 + margeEsquerre, 411.0, rack.cablejat.aspecte == "aceptable").pinta()
@@ -97,23 +98,23 @@ function pintaPagina07 (ctx){
 
 		ctx.doc.text(rack.cablejat.pPanels.categoriesPPanel, 234.0 + margeEsquerre, 448.0 - 8);
 
-		new Cercle(ctx.doc, 239.0 + margeEsquerre, 463.0, rack.cablejat.estatTerminacions == "muy deficiente").pinta()
-		new Cercle(ctx.doc, 251.0 + margeEsquerre, 463.0, rack.cablejat.estatTerminacions == "deficiente").pinta()
-		new Cercle(ctx.doc, 261.0 + margeEsquerre, 463.0, rack.cablejat.estatTerminacions == "mejorable").pinta()
-		new Cercle(ctx.doc, 272.0 + margeEsquerre, 463.0, rack.cablejat.estatTerminacions == "aceptable").pinta()
-		new Cercle(ctx.doc, 283.0 + margeEsquerre, 463.0, rack.cablejat.estatTerminacions == "correcto").pinta()
+		new Cercle(ctx.doc, 239.5 + margeEsquerre, 461, rack.cablejat.estatTerminacions == "muy deficiente").pinta()
+		new Cercle(ctx.doc, 251.0 + margeEsquerre, 461, rack.cablejat.estatTerminacions == "deficiente").pinta()
+		new Cercle(ctx.doc, 261.0 + margeEsquerre, 461, rack.cablejat.estatTerminacions == "mejorable").pinta()
+		new Cercle(ctx.doc, 272.0 + margeEsquerre, 461, rack.cablejat.estatTerminacions == "aceptable").pinta()
+		new Cercle(ctx.doc, 283.0 + margeEsquerre, 461, rack.cablejat.estatTerminacions == "correcto").pinta()
 
 
 		new Cercle(ctx.doc, 241.0 + margeEsquerre, 479.0, rack.cablejat.duplicadorPorts).pinta()
 		new Cercle(ctx.doc, 264.0 + margeEsquerre, 479.0, !rack.cablejat.duplicadorPorts && rack.cablejat.duplicadorPorts != null).pinta()
 
-		new Cercle(ctx.doc, 241.0 + margeEsquerre, 495.0, rack.cablejat.cableObsolet).pinta()
-		new Cercle(ctx.doc, 264.0 + margeEsquerre, 495.0, !rack.cablejat.cableObsolet && rack.cablejat.cableObsolet != null).pinta()
+		new Cercle(ctx.doc, 241.0 + margeEsquerre, 495.0, rack.cablejat.cablejatObsolet).pinta()
+		new Cercle(ctx.doc, 264.0 + margeEsquerre, 495.0, !rack.cablejat.cablejatObsolet && rack.cablejat.cablejatObsolet != null).pinta()
 
 
 		/* Rack -- electricitat */
 
-		new Cercle(ctx.doc, 239.0 + margeEsquerre, 530.0, rack.electricitat.estat == "muy deficiente").pinta()
+		new Cercle(ctx.doc, 239.5 + margeEsquerre, 530.0, rack.electricitat.estat == "muy deficiente").pinta()
 		new Cercle(ctx.doc, 251.0 + margeEsquerre, 530.0, rack.electricitat.estat == "deficiente").pinta()
 		new Cercle(ctx.doc, 261.0 + margeEsquerre, 530.0, rack.electricitat.estat == "mejorable").pinta()
 		new Cercle(ctx.doc, 272.0 + margeEsquerre, 530.0, rack.electricitat.estat == "aceptable").pinta()
@@ -137,17 +138,17 @@ function pintaPagina07 (ctx){
 		new Cercle(ctx.doc, 241.0 + margeEsquerre, 614.0, rack.dispositiusObsolets).pinta()
 		new Cercle(ctx.doc, 264.0 + margeEsquerre, 614.0, !rack.dispositiusObsolets && rack.dispositiusObsolets != null).pinta()
 
-		ctx.doc.text(rack.observacions, 236.0 + margeEsquerre, 638.0 - 8);
-
+		ctx.doc.text("RACK " + (index + 1) + ":     " + rack.observacions, 76, 662.0 - 8 + distanciaObs);  
 
 		// establim marge per al següent rack
 		switch (index){
 			case 0: margeEsquerre += 68.5; break;  // per al rack 2
-			case 1: margeEsquerre += 67.5; break;  // per al rack 3
-			case 2: margeEsquerre += 68.5; break;  // per al rack 4
+			case 1: margeEsquerre += 67.0; break;  // per al rack 3
+			case 2: margeEsquerre += 67.5; break;  // per al rack 4
 			case 3: margeEsquerre += 68.5; break;  // per al rack 5
 		}
 		
+		distanciaObs += 15
 		
 
 	})

@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 	var imatgeFons = new Image();
 	imatgeFons.crossOrigin="anonymous"
-	imatgeFons.src = "./imatgesChecklist/Pagina_07.jpg";
+	imatgeFons.src = "./imatgesChecklist/Pagina_09.jpg";
 
 	console.log(`imatgeFons.src = ${imatgeFons.src}`)
 	imatgeFons.onload = function () {

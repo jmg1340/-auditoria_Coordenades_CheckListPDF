@@ -169,8 +169,8 @@ let oAudit = {
           idRack: null,
           ubicacio: "ubicacio rack 1",
           tipusRack: "armario",
-          estatGeneral: "deficiente",
-          aspecteNeteja: "mejorable",
+          estatGeneral: "muy deficiente",
+          aspecteNeteja: "muy deficiente",
           pany: {
             existeix: true,
             clauAlPany: false,
@@ -178,7 +178,7 @@ let oAudit = {
           },
           zonaPasLliure: false,
           cablejat: {
-            aspecte: "aceptable",
+            aspecte: "muy deficiente",
             pPanels: {
               numPPanelActius: 3,
               categoriesPPanel: "cat6"
@@ -188,7 +188,7 @@ let oAudit = {
             cablejatObsolet: true
           },
           electricitat: {
-            estat: "aceptable",
+            estat: "muy deficiene",
             regletaSuministramentNet: true,
             regletaSuministramentBrut: false,
             observacions: "obs electricitat"
@@ -197,11 +197,12 @@ let oAudit = {
           dispositiusObsolets: false,
           observacions: "Obs rack 1"
         },
+
         {
           idRack: null,
           ubicacio: "sala administracio",
           tipusRack: "cofre",
-          estatGeneral: "muy deficiente",
+          estatGeneral: "deficiente",
           aspecteNeteja: "deficiente",
           pany: {
             existeix: false,
@@ -220,7 +221,7 @@ let oAudit = {
             cablejatObsolet: true
           },
           electricitat: {
-            estat: "correcto",
+            estat: "deficiente",
             regletaSuministramentNet: false,
             regletaSuministramentBrut: true,
             observacions: "obs electricitat"
@@ -229,12 +230,13 @@ let oAudit = {
           dispositiusObsolets: true,
           observacions: "obs rack 2"
         },
+
         {
           idRack: null,
           ubicacio: "ubicacio rack 3",
           tipusRack: "cofre",
           estatGeneral: "aceptable",
-          aspecteNeteja: "correcto",
+          aspecteNeteja: "aceptable",
           pany: {
             existeix: true,
             clauAlPany: false,
@@ -242,12 +244,12 @@ let oAudit = {
           },
           zonaPasLliure: false,
           cablejat: {
-            aspecte: "muy deficiente",
+            aspecte: "aceptable",
             pPanels: {
               numPPanelActius: 4,
               categoriesPPanel: "cat5e"
             },
-            estatTerminacions: "mejorable",
+            estatTerminacions: "aceptable",
             duplicadorPorts: true,
             cablejatObsolet: false
           },
@@ -260,6 +262,72 @@ let oAudit = {
           ventilacio: true,
           dispositiusObsolets: false,
           observacions: "obs rack 3"
+        },
+
+        {
+          idRack: null,
+          ubicacio: "ubicacio rack 4",
+          tipusRack: "cofre",
+          estatGeneral: "mejorable",
+          aspecteNeteja: "mejorable",
+          pany: {
+            existeix: true,
+            clauAlPany: false,
+            estatPany: "abierta"
+          },
+          zonaPasLliure: false,
+          cablejat: {
+            aspecte: "mejorable",
+            pPanels: {
+              numPPanelActius: 4,
+              categoriesPPanel: "cat5e"
+            },
+            estatTerminacions: "mejorable",
+            duplicadorPorts: true,
+            cablejatObsolet: false
+          },
+          electricitat: {
+            estat: "mejorable",
+            regletaSuministramentNet: false,
+            regletaSuministramentBrut: false,
+            observacions: "obs electricitat"
+          },
+          ventilacio: true,
+          dispositiusObsolets: false,
+          observacions: "obs rack 4"
+        },
+
+        {
+          idRack: null,
+          ubicacio: "ubicacio rack 5",
+          tipusRack: "cofre",
+          estatGeneral: "correcto",
+          aspecteNeteja: "correcto",
+          pany: {
+            existeix: true,
+            clauAlPany: false,
+            estatPany: "abierta"
+          },
+          zonaPasLliure: false,
+          cablejat: {
+            aspecte: "correcto",
+            pPanels: {
+              numPPanelActius: 4,
+              categoriesPPanel: "cat5e"
+            },
+            estatTerminacions: "correcto",
+            duplicadorPorts: true,
+            cablejatObsolet: false
+          },
+          electricitat: {
+            estat: "correcto",
+            regletaSuministramentNet: false,
+            regletaSuministramentBrut: false,
+            observacions: "obs electricitat"
+          },
+          ventilacio: true,
+          dispositiusObsolets: false,
+          observacions: "obs rack 5"
         }
 
 
@@ -268,75 +336,75 @@ let oAudit = {
 
 
     llocsDeTeball : {
-      estatCablejat: null, 	// valor 1 - 5
+      estatCablejat: "aceptable", 	// valor 1 - 5
 
       puntsXarxa: {
-        estat: null,	// valor 1 - 5
+        estat: "deficiente",	// valor 1 - 5
         identificacio: {
-          existeix: null,		// true / false
-          observacions: null
+          existeix: true,		// true / false
+          observacions: "observacions punts identificacio punts xarxa"
         },
         suficientsPunts: {
-          existeix: null, 	// true / false
-          observacions: null
+          existeix: false, 	// true / false
+          observacions: "observacins punts suficients"
         },
         miniSwitchs: {
-          existeix: null, 	// true / false
-          observacions: null
+          existeix: true, 	// true / false
+          observacions: "observacions miniswitchs"
         }
       },
 
       electricitat: {
-        estat: null,	// valor 1 - 5
+        estat: "correcto",	// valor 1 - 5
         suficientsEndolls: {
-          existeix: null,		// true / false
-          observacions: null
+          existeix: false,		// true / false
+          observacions: "observacions suficients endolls"
         },
         regletes: {
-          existeix: null, 	// true / false
-          observacions: null
+          existeix: true, 	// true / false
+          observacions: "observacions regletes"
         },
         regletesCascada: {
-          existeix: null, 	// true / false
-          observacions: null
+          existeix: false, 	// true / false
+          observacions: "observacions regletes en cascada"
         }
       },
 
-      observacions: null
+      observacions: "observacions generals dels llocs de treball"
     },
 
     LAN : {
 
       SWidentificats: {  // estan identificats ?
-        existeix: null,		// true / false
-        observacions: null
+        existeix: true,		// true / false
+        observacions: "observacions switchs identificats"
       },
       wifiAPs: {
-        quantitat: null,
+        quantitat: 2,
         ubicacio: {
           salaEspera: false,
-          altres: null
+          altres: "ubicades en un altre lloc"
         },
         APvisible: {  // estan identificats ?
-          existeix: null,		// true / false
-          observacions: null
+          existeix: false,		// true / false
+          observacions: "observacions app visible"
         },
         coberturaPROAS: {  // estan identificats ?
-          existeix: null,		// true / false
-          observacions: null
+          existeix: false,		// true / false
+          observacions: "observacions cobertura PROAS"
         },
         carteleriaWifi: {  // estan identificats ?
-          existeix: null,		// true / false
-          observacions: null
+          existeix: true,		// true / false
+          observacions: "observacions carteleria wifi"
         },
-        observacions: null
+        observacions: "observacions AP wifi"
       },
 
-      NumCuesImpressioMTF: null,
-      NumCuesImpressio: null,
-      altresDispositius: null,
+      NumCuesImpressioMTF: 1,
+      NumCuesImpressio: 6,
+      altresDispositius: "altres dispositius",
       coberturaWifi: null,
-      observacions: null,
+      observacions: "observacions generals LAN",
     },
 
 
