@@ -410,7 +410,8 @@ let oAudit = {
 
     equipamentConexions: {
       connexioPortSW1Gi23: false,
-      altraConnexio: null,
+      altraConnexioSW: "SW1",
+      altraConnexioGi: 26,
     },
 
     pendriveBIOS : {
