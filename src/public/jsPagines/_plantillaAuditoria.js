@@ -403,47 +403,60 @@ let oAudit = {
       NumCuesImpressioMTF: 1,
       NumCuesImpressio: 6,
       altresDispositius: "altres dispositius",
-      coberturaWifi: null,
+      coberturaWifi: {
+        dbProas: "4 dbs",
+        dbSalaReunions: "6 dbs",
+        altre1: {
+          lloc: "lloc Altre1",
+          dbAltre1: "dbs altre1"
+        },
+        altre2: {
+          lloc: "lloc Altre2",
+          dbAltre2: "dbs altre2"
+        },
+        observacionsCoberturaWifi: "observacions cobertura wifi"
+      },
       observacions: "observacions generals LAN",
     },
 
 
     equipamentConexions: {
-      connexioPortSW1Gi23: false,
+      connexioPortSW1Gi23: true,
       altraConnexioSW: "SW1",
       altraConnexioGi: 26,
     },
 
     pendriveBIOS : {
-      existeix: null,		// true / false
-      ubicacio: null,
-      observacions: null
+      existeix: true,		// true / false
+      ubicacio: "ubicacio",
+      observacions: "observacions pendrive BIOS"
     },
 
     filMusical: {
-      existeix: null,
-      connexioSwitchPort: null,
-      observacions: null
+      existeix: true,
+      connexioSwitch: "SW2",
+      connexioPort: 24,
+      observacions: "observacions fil musical"
     },
 
     telemedicina : {
-      existeix: null, 	// true / false
-      observacions: null,
+      existeix: true, 	// true / false
+      observacions: "observacions telemedicina",
       dispositius: {
-        TV32: false,		// true / false
-        Jabra510: false,	// true / false
-        camaraIP: false,	// true / false
-        DisplayPort: false, 	// true / false
+        TV32: true,		// true / false
+        Jabra510: true,	// true / false
+        camaraIP: true,	// true / false
+        DisplayPort: true, 	// true / false
       },
-      estat: null,	// valor 1 - 5
+      estat: "deficiente",	// valor 1 - 5
     },
 
     LectorCDDVDExtern : {
-      existeix: null,		// true / false
-      observacions: null
+      existeix: false,		// true / false
+      observacions: "observacions lector cd extern"
     },
 
-    observacions: null
+    observacions: "observacions intalacions i comunicacions"
 
   },
 
