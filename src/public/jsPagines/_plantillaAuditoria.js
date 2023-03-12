@@ -1,837 +1,570 @@
 let oAudit = {
-
-
-  
-  // idAuditoria: null,
-  data: "31/12/2021",
-  nomCentre: "Nom del centre",
-  tecnic: "Jordi Miserachs",
-
-  sector: "Sector XX",
-  domicili: "Carrer Tal, numero qual, codi postal ciutat",
-  DC: "Nom del director del centre",
-  interlocutors: "nom director, JASP",
-
-
-
-  // INSTALACIONS I COMUNICACIONS
-
+  dadesCentre: {
+    data: "2023/03/21",
+    nomCentre: "CA Sant Feliu del Llobregat",
+    sector: "nom sector",
+    codi: "0886",
+    domicili: "domicili del centre",
+    tecnic: "nom tecnic",
+    DC: "director centre",
+    interlocutors: "interlocutor1, interlocutor2",
+  },
+  tareasRequeridas: {
+    RetirarMinipacsDelRack: true,
+    RevisarCascosJabra: true,
+    RetirarDelRack: true,
+    Retirar1: "tarea req 1",
+    Retirar2: "tarea req 2",
+    Retirar3: "tarea req 3",
+    Retirar4: null,
+    Retirar5: "tarea req 5",
+  },
   instalacionsComunicacions: {
-
-    informacioPrevia: {
-
-      CA: {
-        codi: "ASXXXX",
-        idSiteBT: 1234567,
-        totalUsuaris: 10,
-        Linia1: "Linia dades principal",
-        Linia2: "Linia dades backup",
-        CiscPrime: {
-          NumRouters: 1,
-          NumSwitchs: 3,
-          NumAPsWifi: 2
-        },
-        CuesImpressioMTF: 1,
-        CuesImpressio: 5
-      },
-      TareasRequeridas:{
-        RetirarMinipacsDelRack: true,
-        RevisarCascosJabra: true,
-        RetirarDelRack: true,
-        Otras: null
-      }
-    },
-
-
-
     sala: {
-      existeix: null,     // propietat NO Rafa. Aportada per JMG
-      centreSecundari: {
-        existeix: true,
-        idCentrePrincipal: "aaa"
-      },
-
+      centreSecundari: { existeix: true, idCentrePrincipal: "id centro ppal" },
       accessibilitat: {
-        cerraduraPorta: {
-          existeix: null,
-          observacions: "observacions cerradura Porta"
-        },
-        estatPorta: "abierta",	// oberta / tancada
-        zonaPasLliure: {
-          existeix: true,
-          observacions: "observacions zona de pas lliure",
-        },
+        cerraduraPorta: { existeix: true, observacions: "obs cerradura porta" },
+        estatPorta: "abierta",
+        zonaPasLliure: { existeix: true, observacions: "obs zona pas lliure" },
       },
-
       proveidorWAN: {
-        estatInstalacio: "correcto",	// valor entre 1 - 5
-        instalacionsObsoletes: {
-          existeix: false,
-          observacions: "observacions instalacions obsoletes"
-        },
-        idLinia1: {
-          existeix: true,
-          observacions: "observacions idLinia 1"
-        },
-        idLinia2: {
-          existeix: false,
-          observacions: "observacions idLinia 2"
-        },
-        estatConvertidorLinia1: "deficiente", 	// valor 1 - 5
-        estatConvertidorLinia2: "mejorable",	// valor 1 - 5
+        estatInstalacio: "muy deficiente",
+        instalacionsObsoletes: { existeix: true, observacions: "obs instalacions obsoletes" },
+        idLinia1: { existeix: true, observacions: "obs idLinia 1" },
+        idLinia2: { existeix: true, observacions: "obs idLinia 2" },
+        estatConvertidorLinia1: "deficiente",
+        estatConvertidorLinia2: "mejorable",
       },
-
-      SAI : {
-        estatSAI: "aceptable",	// valor 1 - 5
+      SAI: {
+        estatSAI: "aceptable",
         connexioSwitch: {
-          existeix: false,
+          existeix: true,
           connexioPortSW1Gi26: true,
-          connexio: {
-            SW: "SW2",
-            port: 23
-          }
-
+          connexio: { SW: "sw2", port: "23" },
         },
-        instalacioSAI: "sueloJuntoRack",	// opcions: enrackat; a terra dins el rack; al terra junt al rack
+        instalacioSAI: "enrackado",
         elementsConnectatsSAI: {
           router: true,
-          switchs: true,
-					switch1: true,
-					switch2: true,
-					switch3: true,
+          routerNFS: true,
+          switch1: true,
+          switch2: true,
+          switch3: true,
           convertidorLinia1: true,
           convertidorLinia2: true,
-					raspberry: true,
-					filMusical: true,
-					ampliFilM: true,
-          altres: true
+          router4G: true,
+          filMusical: true,
+          ampliFilM: true,
+          raspberry: true,
+
         },
         elementsRegletaNeta: {
           router: true,
-          switchs: true,
-					switch1: true,
-					switch2: true,
-					switch3: true,
+          routerNFS: true,
+          switch1: true,
+          switch2: true,
+          switch3: true,
           convertidorLinia1: true,
           convertidorLinia2: true,
-					raspberry: true,
-					filMusical: true,
-					ampliFilM: true,
-          altres: true
+          router4G: true,
+          filMusical: true,
+          ampliFilM: true,
+          raspberry: true,
         },
         elementsRegletaBruta: {
           router: true,
-          switchs: true,
-					switch1: true,
-					switch2: true,
-					switch3: true,
+          routerNFS: true,
+          switchs: false,
+          switch1: true,
+          switch2: true,
+          switch3: true,
           convertidorLinia1: true,
           convertidorLinia2: true,
-					raspberry: true,
-					filMusical: true,
-					ampliFilM: true,
-          altres: true
+          router4G: true,
+          filMusical: true,
+          ampliFilM: true,
+          raspberry: true,
+        },
+        elementsSenseVerificar: {
+          router: true,
+          routerNFS: true,
+          switchs: false,
+          switch1: true,
+          switch2: true,
+          switch3: true,
+          convertidorLinia1: true,
+          convertidorLinia2: true,
+          router4G: true,
+          filMusical: true,
+          ampliFilM: true,
+          raspberry: true,
+        },
+
+        altresElements: {
+          element1: {
+            nom: "element 1",
+            connexio: {
+              SAI: true,
+              RNeta: true,
+              RBruta: true,
+              SenseVerificar: true,
+            },
+          },
+          element2: {
+            nom: "element 2",
+            connexio: {
+              SAI: true,
+              RNeta: true,
+              RBruta: true,
+              SenseVerificar: true,
+            },
+          },
+          element3: {
+            nom: "element 3",
+            connexio: {
+              SAI: true,
+              RNeta: true,
+              RBruta: true,
+              SenseVerificar: true,
+            },
+          },
+          element4: {
+            nom: null,
+            connexio: {
+              SAI: true,
+              RNeta: true,
+              RBruta: true,
+              SenseVerificar: true,
+            },
+          },
+          element5: {
+            nom: "element 5",
+            connexio: {
+              SAI: true,
+              RNeta: true,
+              RBruta: true,
+              SenseVerificar: true,
+            },
+          },
+          element6: {
+            nom: "element 6",
+            connexio: {
+              SAI: true,
+              RNeta: true,
+              RBruta: true,
+              SenseVerificar: true,
+            },
+          },
         },
       },
 
-      aspecteSala: "deficiente",	// valor 1 - 5
-      climatitzacio: {
-        existeix: true,
-        observacions: "observacions climatitzacio"
-      },
-      ventilacio: {
-        existeix: true,
-        observacions: "observacions ventilacio"
-      },
-      latiguillos: {
-        existeix: true,
-        observacions: "observacions latiguillos"
-      },
-      // numRacksAdecuats: {
-      //   existeix: true,
-      //   observacions: "observacions num racks adecuat"
-      // },
-      elementsBaixaInventari: {
-        existeix: false,
-        observacions: "observacions elements baixa inventari"
-      },
-
-      numRacks: 3,
-      numRacksAdecuat: {
-        existeix: true,
-        observacions: "observacions num racks adecuat"
-      },
 
 
+      aspecteSala: "muy deficiente",
+      climatitzacio: { existeix: true, observacions: "obs climatització" },
+      ventilacio: { existeix: true, observacions: "obs ventilació" },
+      latiguillos: { existeix: true, observacions: "obs latiguillos" },
+      elementsBaixaInventari: { existeix: true, observacions: "obs elements baixa inventari" },
+      numRacks: "3",
+      numRacksAdecuat: { existeix: true, observacions: "obs num racks adecuats" },
       racks: [
-
         {
           idRack: null,
-          ubicacio: "ubicacio rack 1",
+          ubicacio: "asasas",
+          tipusRack: "armario",
+          estatGeneral: "muy deficiente",
+          aspecteNeteja: "deficiente",
+          pany: { existeix: true, clauAlPany: true, estatPany: "abierta" },
+          zonaPasLliure: true,
+          cablejat: {
+            aspecte: "aceptable",
+            pPanels: { numPPanelActius: "2", categoriesPPanel: "cat5" },
+            estatTerminacions: "correcto",
+            duplicadorPorts: true,
+            cablejatPPObsolet: false,
+          },
+          electricitat: {
+            estat: "muy deficiente",
+            regletaSuministramentNet: true,
+            regletaSuministramentBrut: true,
+            observacions: "obs Electr",
+          },
+          ventilacio: true,
+          dispositiusObsolets: true,
+          observacions: "Obs R1",
+        },
+        {
+          idRack: null,
+          ubicacio: "ewerwer",
           tipusRack: "armario",
           estatGeneral: "muy deficiente",
           aspecteNeteja: "muy deficiente",
-          pany: {
-            existeix: true,
-            clauAlPany: false,
-            estatPany: "abierta"
-          },
-          zonaPasLliure: false,
-          cablejat: {
-            aspecte: "muy deficiente",
-            pPanels: {
-              numPPanelActius: 3,
-              categoriesPPanel: "cat6"
-            },
-            estatTerminacions: "muy deficiente",
-            duplicadorPorts: false,
-            cablejatObsolet: true
-          },
-          electricitat: {
-            estat: "muy deficiene",
-            regletaSuministramentNet: true,
-            regletaSuministramentBrut: false,
-            observacions: "obs electricitat"
-          },
-          ventilacio: true,
-          dispositiusObsolets: false,
-          observacions: "Obs rack 1"
-        },
-
-        {
-          idRack: null,
-          ubicacio: "sala administracio",
-          tipusRack: "cofre",
-          estatGeneral: "deficiente",
-          aspecteNeteja: "deficiente",
-          pany: {
-            existeix: false,
-            clauAlPany: true,
-            estatPany: "cerrada"
-          },
+          pany: { existeix: true, clauAlPany: true, estatPany: "abierta" },
           zonaPasLliure: true,
           cablejat: {
-            aspecte: "deficiente",
-            pPanels: {
-              numPPanelActius: 5,
-              categoriesPPanel: "cat5e"
-            },
-            estatTerminacions: "mejorable",
+            aspecte: "muy deficiente",
+            pPanels: { numPPanelActius: "3", categoriesPPanel: "cat5e" },
+            estatTerminacions: "correcto",
             duplicadorPorts: false,
-            cablejatObsolet: true
-          },
-          electricitat: {
-            estat: "deficiente",
-            regletaSuministramentNet: false,
-            regletaSuministramentBrut: true,
-            observacions: "obs electricitat"
-          },
-          ventilacio: false,
-          dispositiusObsolets: true,
-          observacions: "obs rack 2"
-        },
-
-        {
-          idRack: null,
-          ubicacio: "ubicacio rack 3",
-          tipusRack: "cofre",
-          estatGeneral: "aceptable",
-          aspecteNeteja: "aceptable",
-          pany: {
-            existeix: true,
-            clauAlPany: false,
-            estatPany: "abierta"
-          },
-          zonaPasLliure: false,
-          cablejat: {
-            aspecte: "aceptable",
-            pPanels: {
-              numPPanelActius: 4,
-              categoriesPPanel: "cat5e"
-            },
-            estatTerminacions: "aceptable",
-            duplicadorPorts: true,
-            cablejatObsolet: false
+            cablejatPPObsolet: false,
+            cablejatObsolet: true,
           },
           electricitat: {
             estat: "aceptable",
             regletaSuministramentNet: false,
             regletaSuministramentBrut: false,
-            observacions: "obs electricitat"
+            observacions: "obsElect2",
           },
-          ventilacio: true,
+          ventilacio: false,
           dispositiusObsolets: false,
-          observacions: "obs rack 3"
+          observacions: "obs R2",
         },
-
         {
           idRack: null,
-          ubicacio: "ubicacio rack 4",
+          ubicacio: "xvxvxcv",
           tipusRack: "cofre",
-          estatGeneral: "mejorable",
-          aspecteNeteja: "mejorable",
-          pany: {
-            existeix: true,
-            clauAlPany: false,
-            estatPany: "abierta"
-          },
-          zonaPasLliure: false,
+          estatGeneral: "deficiente",
+          aspecteNeteja: "aceptable",
+          pany: { existeix: false, clauAlPany: true, estatPany: "cerrada" },
+          zonaPasLliure: true,
           cablejat: {
             aspecte: "mejorable",
-            pPanels: {
-              numPPanelActius: 4,
-              categoriesPPanel: "cat5e"
-            },
-            estatTerminacions: "mejorable",
+            pPanels: { numPPanelActius: null, categoriesPPanel: "cat5e" },
+            estatTerminacions: "aceptable",
             duplicadorPorts: true,
-            cablejatObsolet: false
+            cablejatPPObsolet: false,
           },
           electricitat: {
-            estat: "mejorable",
+            estat: "muy deficiente",
             regletaSuministramentNet: false,
-            regletaSuministramentBrut: false,
-            observacions: "obs electricitat"
+            regletaSuministramentBrut: true,
+            observacions: "obs Elec 3",
           },
-          ventilacio: true,
-          dispositiusObsolets: false,
-          observacions: "obs rack 4"
+          ventilacio: false,
+          dispositiusObsolets: true,
+          observacions: "obs R3",
         },
-
-        {
-          idRack: null,
-          ubicacio: "ubicacio rack 5",
-          tipusRack: "cofre",
-          estatGeneral: "correcto",
-          aspecteNeteja: "correcto",
-          pany: {
-            existeix: true,
-            clauAlPany: false,
-            estatPany: "abierta"
-          },
-          zonaPasLliure: false,
-          cablejat: {
-            aspecte: "correcto",
-            pPanels: {
-              numPPanelActius: 4,
-              categoriesPPanel: "cat5e"
-            },
-            estatTerminacions: "correcto",
-            duplicadorPorts: true,
-            cablejatObsolet: false
-          },
-          electricitat: {
-            estat: "correcto",
-            regletaSuministramentNet: false,
-            regletaSuministramentBrut: false,
-            observacions: "obs electricitat"
-          },
-          ventilacio: true,
-          dispositiusObsolets: false,
-          observacions: "obs rack 5"
-        }
-
-
-			]
+      ],
     },
-
-
-    llocsDeTeball : {
-      estatCablejat: "aceptable", 	// valor 1 - 5
-
+    llocsDeTeball: {
+      estatCablejat: "muy deficiente",
       puntsXarxa: {
-        estat: "deficiente",	// valor 1 - 5
-        identificacio: {
-          existeix: true,		// true / false
-          observacions: "observacions punts identificacio punts xarxa"
-        },
-        suficientsPunts: {
-          existeix: false, 	// true / false
-          observacions: "observacins punts suficients"
-        },
-        miniSwitchs: {
-          existeix: true, 	// true / false
-          observacions: "observacions miniswitchs"
-        }
+        estat: "deficiente",
+        identificacio: { existeix: true, observacions: "obs identificacio" },
+        suficientsPunts: { existeix: true, observacions: "obs suficients punts" },
+        miniSwitchs: { existeix: true, observacions: "obs mini switchs" },
       },
-
       electricitat: {
-        estat: "correcto",	// valor 1 - 5
+        estat: "muy deficiente",
         suficientsEndolls: {
-          existeix: false,		// true / false
-          observacions: "observacions suficients endolls"
+          existeix: true,
+          observacions: "observacions electricitat 0",
         },
         regletes: {
-          existeix: true, 	// true / false
-          observacions: "observacions regletes"
+          existeix: true,
+          observacions: "observacions electricitat 1",
         },
         regletesCascada: {
-          existeix: false, 	// true / false
-          observacions: "observacions regletes en cascada"
-        }
+          existeix: true,
+          observacions: "observacions electricitat 2",
+        },
       },
-
-      observacions: "observacions generals dels llocs de treball"
+      observacions: "observacions electricitat",
     },
-
-    LAN : {
-
-      SWidentificats: {  // estan identificats ?
-        existeix: true,		// true / false
-        observacions: "observacions switchs identificats"
-      },
+    LAN: {
+      SWidentificats: { existeix: false, observacions: "observacions lan" },
       wifiAPs: {
-        quantitat: 2,
-        ubicacio: {
-          salaEspera: false,
-          altres: "ubicades en un altre lloc"
+        quantitat: "3",
+        APs: {
+          AP1: { ubicacio: "ubicacio ap 1", observacions: "obs ap 1" },
+          AP2: { ubicacio: "ubicacio ap 2", observacions: "obs ap 2" },
+          AP3: { ubicacio: "ubicacio ap 3", observacions: "obs ap 3" },
+          AP4: { ubicacio: "ubicacio ap 4", observacions: "obs ap 4" },
+          AP5: { ubicacio: "ubicacio ap 5", observacions: "obs ap 5" },
         },
-        APvisible: {  // estan identificats ?
-          existeix: false,		// true / false
-          observacions: "observacions app visible"
+        APvisible: { existeix: true, observacions: "obs apps visibles" },
+        carteleriaWifi: { existeix: true, observacions: "obs carteleria wifi" },
+        observacions: "obs wifi",
+        coberturaWifi: {
+          dbProas: "45 db",
+          dbSalaReunions: "43 db",
+          altre1: { lloc: "lloc 1", dbAltre1: "db 1" },
+          altre2: { lloc: "lloc 2", dbAltre2: "db 2" },
+          altre3: { lloc: null, dbAltre3: null },
+          altre4: { lloc: null, dbAltre4: null },
         },
-        coberturaPROAS: {  // estan identificats ?
-          existeix: false,		// true / false
-          observacions: "observacions cobertura PROAS"
-        },
-        carteleriaWifi: {  // estan identificats ?
-          existeix: true,		// true / false
-          observacions: "observacions carteleria wifi"
-        },
-        observacions: "observacions AP wifi"
       },
-
-      NumCuesImpressioMTF: 1,
-      NumCuesImpressio: 6,
+      NumCuesImpressio: "5",
+      NumCuesImpressioMTF: "3",
       altresDispositius: "altres dispositius",
-      coberturaWifi: {
-        dbProas: "4 dbs",
-        dbSalaReunions: "6 dbs",
-        altre1: {
-          lloc: "lloc Altre1",
-          dbAltre1: "dbs altre1"
-        },
-        altre2: {
-          lloc: "lloc Altre2",
-          dbAltre2: "dbs altre2"
-        },
-        observacionsCoberturaWifi: "observacions cobertura wifi"
-      },
-      observacions: "observacions generals LAN",
     },
-
-
     equipamentConexions: {
-      connexioPortSW1Gi23: true,
-      altraConnexioSW: "SW1",
-      altraConnexioGi: 26,
+      connexioPortSW1Gi23: false,
+      altraConnexioSW: "sw cl",
+      altraConnexioGi: "cl Gi",
+      observacions: "obs climatització",
     },
-
-    pendriveBIOS : {
-      existeix: true,		// true / false
-      ubicacio: "ubicacio",
-      observacions: "observacions pendrive BIOS"
-    },
-
-    filMusical: {
+    filMusical: { existeix: true, observacions: "obs fil m." },
+    telemedicina: {
       existeix: true,
-      connexioSwitch: "SW2",
-      connexioPort: 24,
-      observacions: "observacions fil musical"
-    },
-
-    telemedicina : {
-      existeix: true, 	// true / false
-      observacions: "observacions telemedicina",
+      observacions: "obs telem",
       dispositius: {
-        TV32: true,		// true / false
-        Jabra510: true,	// true / false
-        camaraIP: true,	// true / false
-        DisplayPort: true, 	// true / false
+        TV32: true,
+        Jabra510: true,
+        camaraIP: true,
+        DisplayPort: true,
       },
-      estat: "deficiente",	// valor 1 - 5
+      estat: "muy deficiente",
     },
-
-    LectorCDDVDExtern : {
-      existeix: false,		// true / false
-      observacions: "observacions lector cd extern"
+    LectorCDDVDExtern: { existeix: true, observacions: "obs lector" },
+    firmaBiometrica: {
+      numTablets: "4",
+      tabletsApagades: { existeix: true, observacions: "obs tablets apagadas" },
+      retirarTablets: { existeix: true, observacions: "obs retirar tables" },
+      tablets: {
+        t1: { codi: "99999", ubicacio: "ubic 9999", observacions: "obs 999" },
+        t2: { codi: "888", ubicacio: "ubic 888", observacions: "obs 888" },
+        t3: { codi: "777", ubicacio: "ubic 777", observacions: "obs777" },
+        t4: { codi: "666", ubicacio: "ubic 666", observacions: "obs 666" },
+        t5: { codi: "555", ubicacio: "ubic 555", observacions: "obs 555" },
+        t6: { codi: "444", ubicacio: "ubic 444", observacions: "obs 444" },
+        t7: { codi: "333", ubicacio: "ubic 333", observacions: "obs 333" },
+      },
     },
-
-    observacions: "observacions intalacions i comunicacions"
-
+    gestioTorns: {
+      dispositius: {
+        totem: true,
+        impresores: true,
+        pantalles: true,
+        observacions: "obs disp GdT",
+      },
+      revisio: {
+        avisAPacients: { existeix: true, observacions: "obs llamada" },
+        arribadaPacient: { existeix: true, observacions: "obs llegada" },
+      },
+    },
+    observacions: "obs instalacions",
   },
-
-
-
-  // COMUNICACIONS UNIFICADES
-
-  comunicacionsUnificades : {
+  comunicacionsUnificades: {
     salaReunions: {
-      existeix: false,
-      observacions: null,
-      capacitat: null,
-      mides: null,
+      numero: "2",
+      capacitat: "capacitat sales",
+      mides: "mesures sales",
       dispositius: {
-        SX10: false,		// true / false
-        SX80: false,		// true / false
-        roomkit: false,	// true / false
-        DX80: false,	// true / false
-        camaraWeb: false,  // true / false
-        tablet: false, 	// true / false
-        mando: false,		// true / false
-        altaveu: false, 	// true / false
-        TV: false,		// true / false
-        projector: false, // true / false
-        PC: false, // true / false
-        displayPortHDMI: false, 	// true / false
-        conversorVGA_HDMI: false,	// true / false
-        cableAudio: false,	// true / false
-        duplicadorHDMI: false,	// true / false
+        SX10: true,
+        SX80: true,
+        roomkit: true,
+        DX80: true,
+        camaraWeb: true,
+        tablet: true,
+        mando: true,
+        TV: true,
+        projector: true,
+        PC: true,
+        displayPortHDMI: true,
+        conversorVGA_HDMI: true,
+        cableAudio: true,
+        duplicadorHDMI: true,
       },
-      recomanacions: null,
     },
-    videoconferencia : {
-      // existeix: null, 	// true / false
-      // observacionsExistencia: null,
-      operativa: null,	// true / false
-      observacionsOperativa: null,
-      // estat: null,		// valor 1 - 5
+    videoconferencia: {
       prova: {
-        feta: false,
-        observacions: null,
-        trucada: false,	// true / false
-        compartirPc: false, // true / false
-        audio: false,	// true / false
-        video: false, 	// true / false
-        resultat: null,	// valor 1 - 5
+        feta: true,
+        resultat: "muy deficiente",
+        observacions: "obs videoconferencia",
       },
-      observacions: null
     },
-
-    telefonSupervivencia : {
-      existeix: null,		// true / false
-      observacionsExistencia: null,
-      DDI: null,
-      instruccions: null,
-      estat: null,		// valor 1 - 5
-      ubicacio: null,
-      prova : {
-        trucadaSortint: false,	// true / false
-        trucadaEntrant: false, 	// true / false
-        desconectarTensio: false,
-        nivellAudioRing: false
+    telefonSupervivencia: {
+      existeix: true,
+      DDI: "ddi telefon",
+      estat: "muy deficiente",
+      ubicacio: "ubicacio telefon supervivència",
+      resultatProva: "muy deficiente",
+      prova: {
+        trucadaSortint: true,
+        trucadaEntrant: true,
+        desconectarTensio: true,
+        nivellAudioRing: true,
       },
-      nivellCobertura: null,
-      nivellBateria: null,
-      connectatCorrent: null,
+      nivellCobertura: "1",
+      nivellBateria: "2",
+      connectatCorrent: true,
       instruccionsProperes: null,
-      observacions: null,
     },
-
     auricularsRecanvi: {
-      existeix: null,		// true / false
-      observacions: null,
-      quantitat: null,	// numero
-    }
-
-  },
-
-
-  // SEGURETAT DE LA INFORMACIO
-
-  seguretatInformacio : {
-
-    taulesNetes : {
-      documentacioSobreTaules: {
-        existeix: null,		// true / false
-        observacions: null
-      },
-      documentacioImpresores : {
-        existeix: null,		// true / false
-        observacions: null
-      },
-      documentacioPapeleres : {
-        existeix: null,		// true / false
-        observacions: null
-      }
+      existeix: true,
+      observacions: "obs auriculars",
+      quantitat: "1",
     },
-
+    observacionsCU: "obs CU",
+  },
+  seguretatInformacio: {
+    taulesNetes: {
+      documentacioSobreTaules: {
+        existeix: true,
+        observacions: "obs docu mesas",
+      },
+      documentacioImpresores: {
+        existeix: true,
+        observacions: "obs docu impresoras",
+      },
+      documentacioPapeleres: {
+        existeix: true,
+        observacions: "obs docu papeleras",
+      },
+    },
     destruccioDocuments: {
       destructoraPapers: {
-        existeix: null,			// true / false
-        observacionsPapers: null,
-        complementCDs: null,	// true / false
-        observacionsCDs: null,
-        quantitat: null,		// numero
+        existeix: true,
+        observacionsPapers: "obs destruct",
+        complementCDs: true,
+        observacionsCDs: "destruct CD/DVD",
+        quantitat: "3",
       },
       contenidorSegur: {
-        existeix: null,			// true / false
-        observacions: null,
-        quantitat: null,		// numero
-      }
+        existeix: true,
+        observacions: "obs contenidor",
+        quantitat: "5",
+      },
     },
-
     OrientacioPantalles: {
-      exterior: null, 		// true / false
-      observacionsExterior: null,
-      zonaPas: null, 			// true / false
-      observacionsZonaPas: null
+      exterior: true,
+      observacionsExterior: "obs orientacio ext",
+      zonaPas: true,
+      observacionsZonaPas: "obs zona de pas",
     },
-
     carteleriaLOPD: {
-      PROAS: null, 		// true / false
-      observacionsPROAS: null,
-      CEX: null, 			// true / false
-      observacionsCEX: null
+      PROAS: true,
+      observacionsPROAS: "cart lopd proas",
+      CEX: true,
+      observacionsCEX: "consultas lopd",
     },
-
     materialBaixaInventari: {
-      existeix: null, 	// true / false
-      observacions: null
+      existeix: true,
+      observacions: "obs material baixa",
     },
-
-    suportsFisics: {
-      existeix: null, 	// true / false
-      observacions: null
-    },
-
-    documentacioSensible: {
-      existeix: null, 	// true / false
-      observacions: null
-    },
-
-    expedientsGreus: {
-      existeix: null, 	// true / false
-      observacions: null
-    },
-
-
-
-    accesAlCentre : {
+    suportsFisics: { existeix: true, observacions: "obs backup" },
+    documentacioSensible: { existeix: true, observacions: "obs docu sensible" },
+    expedientsGreus: { existeix: true, observacions: "obs expedients greus" },
+    accesAlCentre: {
       personalIntern: {
-        usuarisAmbClaus: {
-          existeix: null,		// true / false
-          observacions: null 	// numero
-        },
-        codisAlarma: {
-          tipus: null,		// individuals / generic
-          observacions: null 	// numero
-        },
+        usuarisAmbClaus: { existeix: true, observacions: "obs llaves interno" },
+        codisAlarma: { tipus: null, observacions: null },
       },
       personalExtern: {
-
-        llibreRegistre: {
-          existeix: null,		// true / false
-          observacions: null 	// numero
-        },
-        usuarisAmbClaus: {
-          existeix: null,		// true / false
-          observacions: null 	// numero
-        },
+        usuarisAmbClaus: { existeix: true, observacions: "obs llaves externo" },
         codisAlarma: {
-          tipus: null,		// individuals / generic
-          observacions: null 	// numero
+          tipus: "individuales",
+          observacions: "obs codi alarma extern",
         },
       },
       accesForaHorariHabitual: {
-        existeix: null,		// true / false
-        observacions: null 	// numero
+        existeix: true,
+        observacions: "obs fora horari ",
       },
-
-      observacions: null,
+      observacions: "obs control accessos",
     },
-
-
-
-
-
-    // seguridad fisica i del entorno
-
-
-    alarmaIntrusio: {
-      existeix: null,		// true / false
-      observacions: null 	// numero
-    },
-    alarmaIncendis: {
-      existeix: null,		// true / false
-      observacions: null 	// numero
-    },
-
-    videovigilancia : {
-      existeix: null,		// true / false
-      observacions: null,
+    alarmaIntrusio: { existeix: true, observacions: "obs alarma intrusio" },
+    videovigilancia: {
+      existeix: true,
+      observacions: "obs existeix videovigilancia",
       gestioInterna: {
-        existeix: null,
-        observacions: null,
+        existeix: true,
+        observacions: "obs gestio interna",
         gravacioImatges: {
-          personalAmbAcces: null,
-          periodeConservacio: null
+          personalAmbAcces: "obs gest int pers amb accés",
+          periodeConservacio: "temps retencio intern",
         },
       },
       gestioExterna: {
-        existeix: null,
-        observacionsExistencia: null,
-        periodeConservacio: null,
-        evidencia: null,
-        observacionsEvidencia: null
+        existeix: true,
+        observacionsExistencia: "obs gest externa",
+        periodeConservacio: "temps retencio ext.",
+        evidencia: true,
+        observacionsEvidencia: "obs evidencia",
       },
-
-      retol: {
-        existeix: null,		// true / false
-        observacions: null 	// numero
-      },
+      retol: { existeix: true, observacions: "obs letr inform" },
       carteleriaActualitzada: {
-        existeix: null,		// true / false
-        observacions: null 	// numero
+        existeix: true,
+        observacions: "obs cartel acutal.",
       },
     },
-
-
-
-    // Seguretat de les operacions
-
-    // continuidad de negocio
-
-    centresAlternatiusGADA: {
-      existeix: null,		// true / false
-      observacions: null 	// numero
+    alarmaIncendis: { existeix: true, observacions: "obs alarma incendies" },
+    GADAplanContinuidadNegocio: {
+      existeix: true,
+      observacions: "obs GADA PCN",
     },
-
-    telefonSupervivencia: {
-      existeix: null,		// true / false
-      observacions: null 	// numero
+    GADAcentresAlternatius: {
+      existeix: true,
+      observacions: "obs GADA Dep assoc.",
     },
-
-    procedimentsPaper: {
-      existeix: null,		// true / false
-      observacions: null 	// numero
-    },
-
-    pendriveEmergencia: {
-      ubicacioCorrecte : {
-        existeix: null,		// Esta en un sobre enganxat al rack ?
-        observacions: null
-      },
-      ultimaVersio : {
-        existeix: null,		// true / false
-        observacions: null
-      },
-      actualitzacio : {
-        feta: null, 	// true / false
-        observacions: null
-      },
-    },
-
-
-    // seguretat de les comunicacions
-
+    telefonSupervivencia: { existeix: true, observacions: "obs telf superviv" },
+    procedimentsPaper: { existeix: true, observacions: "obs proced. papel" },
     accesSegurSalaComunicacions: {
-      existeix: null,		// true / false
-      observacions: null 	// numero
+      existeix: true,
+      observacions: "obs cuarto comunic",
     },
-
-    accesSegurRack: {
-      existeix: null,		// true / false
-      observacions: null 	// numero
-    },
-
-    SAIRack: {
-      existeix: null,		// true / false
-      observacions: null 	// numero
-    },
-
-    puntsXarxaSalaEspera: {
-      existeix: null,		// true / false
-      observacions: null 	// numero
-    },
-
-    observacions: null
-
+    accesSegurRack: { existeix: true, observacions: "obs acces rack" },
+    SAIRack: { existeix: true, observacions: "obs SAI operatiu" },
+    observacions: null,
   },
-
   formacio: {
-    auriculars: {
-      formacioFeta: null,
-      observacions: null
-    },
-
-    videoconferencia: {
-      formacioFeta: null,
-      instruccionsEntregades: null,
-      observacions: null
-    },
-
-    llicenciesM3: {
-      formacioFeta: null,
-      observacions: null
-    },
-
-    telefonSupervivencia: {
-      formacioFeta: null,
-      observacions: null
-    },
-
-    observacions: null
+    auriculars: true,
+    videoconferencia: true,
+    llicenciesM3: true,
+    telefonSupervivencia: true,
+    observacions: "obs formacio",
   },
-
   valoracions: {
     usuari: {
-      queixes: null,
-      suggeriments: null,
-      millores: null
+      queixes: "queixes",
+      suggeriments: "sugeriments",
+      millores: "millores",
     },
-
-    tecnic: {
-      valoracions: null
-    }
+    tecnic: { valoracions: "valoracions" },
   },
-
   accionsMillora: {
-    observacions:{
-      rack:{
-        neteja: false,
-        sanejar: false,
-        retirarPatchP: false,
-        retirarRack: false
+    observacions: {
+      rack: {
+        neteja: true,
+        sanejar: true,
+        retirarPatchP: true,
+        retirarRack: true,
       },
-      wanSanejar: false,
-      sala: {
-        neteja: false,
-        retirarObjectes: false
-      },
-      SAI: {
-        revisoDispNoConnectats: false,
-      },
-      enviarPendriveBIOS: false,
-      enviarLatiguillos: false,
+      wanSanejar: true,
+      sala: { neteja: true, retirarObjectes: true },
+      SAI: { revisoDispNoConnectats: true },
+      enviarPendriveBIOS: true,
+      enviarLatiguillos: true,
       llocsTreball: {
-        ampliacioPuntsXarxa: false,
-        revisarPresesXarxa: false,
-        revisarCaixaConexions: false,
+        ampliacioPuntsXarxa: true,
+        revisarPresesXarxa: true,
+        revisarCaixaConexions: true,
       },
-      revisarTelemedicina: false,
-      revisarVideoconferencia: false,
-      enviarWebcam: false,
+      revisarTelemedicina: true,
+      revisarVideoconferencia: true,
       CU: {
-        enviarAuricularsReserva: false,
-        enviarAltaveu: false,
+        enviarAuricularsReservaEvolve65: true,
+        enviarAuricularsReservaJabra930: true,
+        enviarAuricularsReserva: true,
+        enviarAltaveuJabra: true,
       },
-      enviarLectorCDDVD: false,
-      renoveProjector: false,
-      altres: null
+      Seguretat: {
+        solicitarDestructoraPaper: true,
+        solicitarContenidor: true,
+        visibilitatPantalles: true,
+      },
+      enviarLectorCDDVD: true,
     },
-
     NC: {
-      enviarPendriveEmergencia: false,
-      solicitarDestructoraPaper: false,
-      solicitarContenidor: false,
-      visibilitatPantalles: false,
-      salaRackSenseClau: false,
-      rackSenseClaus: false,
-      carteleriaLOPD: false,
-      suportsBackup: false,
-      docsSensibles: false,
-      altres: null
-    }
-  }
-
-}
+      solicitarDestructoraPaper: true,
+      solicitarContenidor: true,
+      visibilitatPantalles: true,
+      salaRackSenseClau: true,
+      rackSenseClaus: true,
+      carteleriaLOPD: true,
+      suportsBackup: true,
+      docsSensibles: true,
+    },
+  },
+  idAuditoria: 0,
+};

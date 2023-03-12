@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 	var imatgeFons = new Image();
 	imatgeFons.crossOrigin="anonymous"
-	imatgeFons.src = "./imatgesChecklist/Pagina_09.jpg";
+	imatgeFons.src = "./imatgesChecklist/Pagina_06.jpg";
 
 	console.log(`imatgeFons.src = ${imatgeFons.src}`)
 	imatgeFons.onload = function () {
@@ -19,9 +19,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 		canvas.addEventListener('mousemove', function (evt) {
 			var mousePos = getMousePos(canvas, evt);
+
 			var message = 'x: ' + Math.round(mousePos.x / 2).toFixed(1) + '  y: ' + Math.round(mousePos.y / 2).toFixed(1);
 			writeMessage(canvas, message, mousePos.x, mousePos.y);
 			txtCoord.innerHTML = message
+
+			pintaLinia( canvas, mousePos.x, mousePos.y)
+
 		}, false);
 
 		canvas.addEventListener("click", function(evt){ 
@@ -32,6 +36,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 	}
 	imatgeFons.onerror = function () { alert(imatgeFons.src + ' failed to load.'); };
+
+
+
+	function pintaLinia (canvas, x, y) {
+		var context = canvas.getContext('2d');
+
+		context.beginPath();
+		context.moveTo(0, y);
+		context.lineTo(1500, y);
+		context.stroke();
+
+		context.moveTo(x, y - 50)
+		context.lineTo(x, y + 50);
+		context.stroke()
+	}
 
 
 
@@ -46,7 +65,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		// context.fillStyle = 'yellow';
 		// context.fillRect(x, y-8, x+20, y);
 		context.fillStyle = 'blue';
-		context.fillText(message, x, y);
+		context.fillText(message, x + 5, y - 5);
 	}
 
 	function getMousePos(canvas, evt) {

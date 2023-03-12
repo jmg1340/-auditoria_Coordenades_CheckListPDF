@@ -17,12 +17,12 @@ document.addEventListener("DOMContentLoaded", function(){
     "Pagina_13.jpg",
     "Pagina_14.jpg",
     "Pagina_15.jpg",
-    "Pagina_16.jpg",
-    "Pagina_17.jpg",
-    "Pagina_18.jpg",
-    "Pagina_19.jpg",
-    "Pagina_20.jpg",
-    "Pagina_21.jpg",
+    // "Pagina_16.jpg",
+    // "Pagina_17.jpg",
+    // "Pagina_18.jpg",
+    // "Pagina_19.jpg",
+    // "Pagina_20.jpg",
+    // "Pagina_21.jpg",
   ]
 
 
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function(){
       ctx.drawImage(background, 0, 0, 595.28, 841.89);
       
       ctx.fillStyle='red';
-			ctx.doc.fontSize(8)
+			ctx.doc.fontSize(10)
       // ctx.fillRect(50,50,100,100);
       // ctx.doc.polygon([0, 0], [595.28, 841.89]);
       // ctx.doc.stroke();
@@ -70,8 +70,8 @@ document.addEventListener("DOMContentLoaded", function(){
       switch (imatge){
 				case "Pagina_01.jpg": pintaPagina01(ctx); break;
 				case "Pagina_02.jpg": pintaCapsalera(ctx); break;
-				case "Pagina_03.jpg": pintaCapsalera(ctx); break;
-				case "Pagina_04.jpg": pintaCapsalera(ctx); break;
+				case "Pagina_03.jpg": pintaPagina03(ctx); break;
+				case "Pagina_04.jpg": pintaPagina04(ctx); break;
 				case "Pagina_05.jpg": pintaPagina05(ctx); break;
 				case "Pagina_06.jpg": pintaPagina06(ctx); break;
 				case "Pagina_07.jpg": pintaPagina07(ctx); break;
