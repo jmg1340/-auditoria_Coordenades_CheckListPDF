@@ -289,8 +289,8 @@ let oAudit = {
           dbSalaReunions: "43 db",
           altre1: { lloc: "lloc 1", dbAltre1: "db 1" },
           altre2: { lloc: "lloc 2", dbAltre2: "db 2" },
-          altre3: { lloc: null, dbAltre3: null },
-          altre4: { lloc: null, dbAltre4: null },
+          altre3: { lloc: "lloc 3", dbAltre3: "db 3" },
+          altre4: { lloc: "lloc 4", dbAltre4: "db 4" },
         },
       },
       NumCuesImpressio: "5",
@@ -298,7 +298,7 @@ let oAudit = {
       altresDispositius: "altres dispositius",
     },
     equipamentConexions: {
-      connexioPortSW1Gi23: false,
+      connexioPortSW1Gi23: true,
       altraConnexioSW: "sw cl",
       altraConnexioGi: "cl Gi",
       observacions: "obs climatització",
@@ -364,7 +364,7 @@ let oAudit = {
         conversorVGA_HDMI: true,
         cableAudio: true,
         duplicadorHDMI: true,
-      },
+      }
     },
     videoconferencia: {
       prova: {
@@ -388,7 +388,7 @@ let oAudit = {
       nivellCobertura: "1",
       nivellBateria: "2",
       connectatCorrent: true,
-      instruccionsProperes: null,
+      instruccionsProperes: false,
     },
     auricularsRecanvi: {
       existeix: true,

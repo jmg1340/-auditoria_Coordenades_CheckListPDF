@@ -9,98 +9,138 @@ function pintaPagina09 (ctx){
 	pintaCapsalera(ctx)
 
 
-	/* CONTINUACIÓ LAN */
+	/* SEGURETAT DE LA INFORMACIO */
 	
-	/* -- otros dispositivos */
-	let objImpr = oAudit.instalacionsComunicacions.LAN
+	/* -- mesas limpias */
+	let objML = oAudit.seguretatInformacio.taulesNetes
 
-	ctx.doc.text(objImpr.altresDispositius, 105.0, 122.0 - 8);
+	new Cercle(ctx.doc, 228.0, 203.0, objML.documentacioSobreTaules.existeix).pinta()
+	new Cercle(ctx.doc, 264.0, 203.0, !objML.documentacioSobreTaules.existeix && objML.documentacioSobreTaules.existeix != null).pinta()
+	ctx.doc.text(objML.documentacioSobreTaules.observacions, 370.0, 207.0 - 8);	
 
-	// faltaria apartat medició cobertura wifi
-	let objCob = oAudit.instalacionsComunicacions.LAN.coberturaWifi
+	new Cercle(ctx.doc, 229.0, 222.0, objML.documentacioImpresores.existeix).pinta()
+	new Cercle(ctx.doc, 264.0, 222.0, !objML.documentacioImpresores.existeix && objML.documentacioImpresores.existeix != null).pinta()
+	ctx.doc.text(objML.documentacioImpresores.observacions, 370.0, 225.0 - 8);	
 
-	ctx.doc.text(objCob.dbProas, 218.0, 258.0 - 8);
-	ctx.doc.text(objCob.dbSalaReunions, 218.0, 274.0 - 8);
-	ctx.doc.text(objCob.altre1.lloc, 80.0, 291.0 - 8);
-	ctx.doc.text(objCob.altre1.dbAltre1, 217.0, 291.0 - 8);
-	ctx.doc.text(objCob.altre2.lloc, 80.0, 310.0 - 8);
-	ctx.doc.text(objCob.altre2.dbAltre2, 217.0, 309.0 - 8);
-	
-	ctx.doc.text(objCob.observacionsCoberturaWifi, 296.0, 258.0 - 8);
+	new Cercle(ctx.doc, 228.0, 241.0, objML.documentacioPapeleres.existeix).pinta()
+	new Cercle(ctx.doc, 264.0, 241.0, !objML.documentacioPapeleres.existeix && objML.documentacioPapeleres.existeix != null).pinta()
+	ctx.doc.text(objML.documentacioPapeleres.observacions, 370.0, 245.0 - 8);	
 
 
 
-	// obseravacions LAN
-	ctx.doc.text(objImpr.observacions, 84.0, 360.0 - 8);
+	/* -- destruccio de documents */
+	let objDD = oAudit.seguretatInformacio.destruccioDocuments
+
+	new Cercle(ctx.doc, 228.0, 277.0, objDD.destructoraPapers.existeix).pinta()
+	new Cercle(ctx.doc, 264.0, 277.0, !objDD.destructoraPapers.existeix && objDD.destructoraPapers.existeix != null).pinta()
+	ctx.doc.text(objDD.destructoraPapers.observacionsPapers, 370.0, 281.0 - 8);	
+
+	new Cercle(ctx.doc, 228.0, 297.0, objDD.destructoraPapers.complementCDs).pinta()
+	new Cercle(ctx.doc, 264.0, 332.0, !objDD.destructoraPapers.complementCDs && objDD.destructoraPapers.complementCDs != null).pinta()
+	ctx.doc.text(objDD.destructoraPapers.observacionsCDs, 370.0, 301.0 - 8);	
+
+	ctx.doc.text(objDD.destructoraPapers.quantitat, 225.0, 316.0 - 8);
+
+
+	new Cercle(ctx.doc, 229.0, 332.0, objDD.contenidorSegur.existeix).pinta()
+	new Cercle(ctx.doc, 264.0, 384.0, !objDD.contenidorSegur.existeix && objDD.contenidorSegur.existeix != null).pinta()
+	ctx.doc.text(objDD.contenidorSegur.observacions, 370.0, 336.0 - 8);	
+
+	ctx.doc.text(objDD.contenidorSegur.quantitat, 233.0, 352.0 - 8);
 
 
 
+	/* -- orientacio pantalles */
+	let objOP = oAudit.seguretatInformacio.OrientacioPantalles
+
+	new Cercle(ctx.doc, 228.0, 384.0, objOP.exterior).pinta()
+	new Cercle(ctx.doc, 264.0, 384.0, !objOP.exterior && objOP.exterior != null).pinta()
+	ctx.doc.text(objOP.observacionsExterior, 370.0, 388.0 - 8);	
+
+	new Cercle(ctx.doc, 228.0, 403.0, objOP.zonaPas).pinta()
+	new Cercle(ctx.doc, 264.0, 403.0, !objOP.zonaPas && objOP.zonaPas != null).pinta()
+	ctx.doc.text(objOP.observacionsZonaPas, 370.0, 407.0 - 8);	
 
 
-	/* CLIMATIZACIÓ */
-	
-	let objEq = oAudit.instalacionsComunicacions.equipamentConexions
+	/* -- cartelleria LOPD */
+	let objCL = oAudit.seguretatInformacio.carteleriaLOPD
 
-	new Quadrat(ctx.doc, 76.0, 442.0, !!objEq.connexioPortSW1Gi23).pinta()
-	new Quadrat(ctx.doc, 172.0, 442.0, !!objEq.altraConnexioSW).pinta() // !! converteix un string a boolean; "" es false;
-	ctx.doc.text(objEq.altraConnexioSW, 234.0, 447.0 - 8);
-	ctx.doc.text(objEq.altraConnexioGi, 280.0, 447.0 - 8);
+	new Cercle(ctx.doc, 228.0, 440.0, objCL.PROAS).pinta()
+	new Cercle(ctx.doc, 264.0, 440.0, !objCL.PROAS && objCL.PROAS != null).pinta()
+	ctx.doc.text(objCL.observacionsPROAS, 370.0, 443.0 - 8);	
 
-
-	let objPen = oAudit.instalacionsComunicacions.pendriveBIOS
-
-	new Cercle(ctx.doc, 234.0, 510.0, objPen.existeix).pinta()
-	new Cercle(ctx.doc, 264.0, 510.0, !objPen.existeix && objPen.existeix != null).pinta()
-	new Quadrat(ctx.doc, 293.0, 510.0, !!objPen.ubicacio).pinta() // !! converteix un string a boolean; "" es false;
-	ctx.doc.text(objPen.ubicacio, 342.0, 514.0 - 8);
-	new Quadrat(ctx.doc, 416.0, 510.0, !!objPen.observacions).pinta() // !! converteix un string a boolean; "" es false;
-	ctx.doc.text(objPen.observacions, 481.0, 514.0 - 8);
-
-
-	let objFil = oAudit.instalacionsComunicacions.filMusical
-
-	new Cercle(ctx.doc, 234.0, 545.0, objFil.existeix).pinta()
-	new Cercle(ctx.doc, 257.0, 545.0, !objFil.existeix && objFil.existeix != null).pinta()
-	new Quadrat(ctx.doc, 293.0, 544.0, !!objFil.connexioSwitch).pinta() // !! converteix un string a boolean; "" es false;
-	ctx.doc.text(objFil.connexioSwitch, 354.0, 549.0 - 8);
-	ctx.doc.text(objFil.connexioPort, 389.0, 549.0 - 8);
-
-	new Quadrat(ctx.doc, 234.0, 562.0, !!objFil.observacions).pinta() // !! converteix un string a boolean; "" es false;
-	ctx.doc.text(objFil.observacions, 299.0, 566.0 - 8);
-
-
-
-	let objTM = oAudit.instalacionsComunicacions.telemedicina
-
-	new Cercle(ctx.doc, 234.0, 595.0, objTM.existeix).pinta()
-	new Cercle(ctx.doc, 263.0, 595.0, !objTM.existeix && objTM.existeix != null).pinta()
-	new Quadrat(ctx.doc, 292.0, 595.0, !!objTM.observacions).pinta() // !! converteix un string a boolean; "" es false;
-	ctx.doc.text(objTM.observacions, 358.0, 600.0 - 8);
-
-	new Quadrat(ctx.doc, 234.0, 612.0, !!objTM.dispositius.TV32).pinta()
-	new Quadrat(ctx.doc, 272.0, 612.0, !!objTM.dispositius.Jabra510).pinta()
-	new Quadrat(ctx.doc, 323.0, 612.0, !!objTM.dispositius.camaraIP).pinta()
-	new Quadrat(ctx.doc, 376.0, 612.0, !!objTM.dispositius.DisplayPort).pinta()
-
-	new Cercle(ctx.doc, 257.0, 628.0, objTM.estat == "muy deficiente").pinta()
-	new Cercle(ctx.doc, 280.0, 628.0, objTM.estat == "deficiente").pinta()
-	new Cercle(ctx.doc, 303.0, 628.0, objTM.estat == "mejorable").pinta()
-	new Cercle(ctx.doc, 327.0, 628.0, objTM.estat == "aceptable").pinta()
-	new Cercle(ctx.doc, 350.0, 628.0, objTM.estat == "correcto").pinta()
-
-
-	let objTLcd = oAudit.instalacionsComunicacions.LectorCDDVDExtern
-
-	new Cercle(ctx.doc, 234.0, 663.0, objTLcd.existeix).pinta()
-	new Cercle(ctx.doc, 263.0, 663.0, !objTLcd.existeix && objTLcd.existeix != null).pinta()
-	new Quadrat(ctx.doc, 292.0, 663.0, !!objTLcd.observacions).pinta() // !! converteix un string a boolean; "" es false;
-	ctx.doc.text(objTLcd.observacions, 358.0, 668.0 - 8);
+	new Cercle(ctx.doc, 228.0, 459.0, objCL.CEX).pinta()
+	new Cercle(ctx.doc, 264.0, 459.0, !objCL.CEX && objCL.CEX != null).pinta()
+	ctx.doc.text(objCL.observacionsCEX, 370.0, 463.0 - 8);	
 
 
 
 
-	ctx.doc.text(oAudit.instalacionsComunicacions.observacions, 75.0, 708.0 - 8);
+	/* -- Gestion activos */
+	let objMB = oAudit.seguretatInformacio.materialBaixaInventari
+
+	new Cercle(ctx.doc, 229.0, 509.0, objMB.existeix).pinta()
+	new Cercle(ctx.doc, 264.0, 509.0, !objMB.existeix && objMB.existeix != null).pinta()
+	ctx.doc.text(objMB.observacions, 370.0, 513.0 - 8);	
 
 
+	let objSF = oAudit.seguretatInformacio.suportsFisics
+
+	new Cercle(ctx.doc, 231.0, 528.0, objSF.existeix).pinta()
+	new Cercle(ctx.doc, 264.0, 528.0, !objSF.existeix && objSF.existeix != null).pinta()
+	ctx.doc.text(objSF.observacions, 370.0, 532.0 - 8);	
+
+
+	let objDS = oAudit.seguretatInformacio.documentacioSensible
+
+	new Cercle(ctx.doc, 228.0, 547.0, objDS.existeix).pinta()
+	new Cercle(ctx.doc, 264.0, 547.0, !objDS.existeix && objDS.existeix != null).pinta()
+	ctx.doc.text(objDS.observacions, 370.0, 551.0 - 8);	
+
+
+	let objEG = oAudit.seguretatInformacio.expedientsGreus
+
+	new Cercle(ctx.doc, 228.0, 567.0, objEG.existeix).pinta()
+	new Cercle(ctx.doc, 264.0, 567.0, !objEG.existeix && objEG.existeix != null).pinta()
+	ctx.doc.text(objEG.observacions, 370.0, 570.0 - 8);	
+
+
+
+
+	let objAPI = oAudit.seguretatInformacio.accesAlCentre.personalIntern
+
+	new Cercle(ctx.doc,228.0, 634.0, objAPI.usuarisAmbClaus.existeix).pinta()
+	new Cercle(ctx.doc, 264.0, 634.0, !objAPI.usuarisAmbClaus.existeix && objAPI.usuarisAmbClaus.existeix != null).pinta()
+	ctx.doc.text(objAPI.usuarisAmbClaus.observacions, 370.0, 637.0 - 8);	
+
+	new Cercle(ctx.doc, 228.0, 653.0, objAPI.codisAlarma.tipus == "individuales").pinta()
+	new Cercle(ctx.doc, 264.0, 653.0, objAPI.codisAlarma.tipus == "generico").pinta()
+	ctx.doc.text(objAPI.codisAlarma.observacions, 370.0, 657.0 - 8);	
+
+
+	let objAPE = oAudit.seguretatInformacio.accesAlCentre.personalExtern
+
+	new Cercle(ctx.doc, 229.0, 689.0, objAPE.usuarisAmbClaus.existeix).pinta()
+	new Cercle(ctx.doc, 264.0, 689.0, !objAPE.usuarisAmbClaus.existeix && objAPE.usuarisAmbClaus.existeix != null).pinta()
+	ctx.doc.text(objAPE.usuarisAmbClaus.observacions, 370.0, 693.0 - 8);	
+
+	new Cercle(ctx.doc, 229.0, 708.0, objAPE.codisAlarma.tipus == "individuales").pinta()
+	new Cercle(ctx.doc, 264.0, 708.0, objAPE.codisAlarma.tipus == "generico").pinta()
+	ctx.doc.text(objAPE.codisAlarma.observacions, 370.0, 713.0- 8);	
+
+
+
+
+	let objAFH = oAudit.seguretatInformacio.accesAlCentre.accesForaHorariHabitual
+
+	new Cercle(ctx.doc, 228.0, 727.0, objAFH.existeix).pinta()
+	new Cercle(ctx.doc, 264.0, 728.0, !objAFH.existeix && objAFH.existeix != null).pinta()
+	ctx.doc.text(objAFH.observacions, 370.0, 731.0 - 8);	
+
+
+
+
+
+	ctx.doc.text(oAudit.seguretatInformacio.accesAlCentre.observacions, 66.0, 763.0 - 8);
 
 }
